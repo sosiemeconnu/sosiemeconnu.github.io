@@ -106,23 +106,89 @@
         </div>
     </div>
 
-    <!-- SECTION À PROPOS -->
-    <section id="a-propos" class="max-w-5xl mx-auto w-full px-4 mb-24 pt-16 scroll-mt-20">
-        <h2 class="text-3xl font-bold text-white mb-2 flex items-center">
+   <!-- SECTION À PROPOS (Design Profil) -->
+    <section id="a-propos" class="max-w-6xl mx-auto w-full px-4 mb-24 pt-16 scroll-mt-20">
+        <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
             <span class="text-teal-500 mr-3">#</span> À propos de moi
         </h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-8"></div>
-        
-        <div class="bg-slate-800/30 border border-slate-700 rounded-2xl p-8 text-slate-300 leading-relaxed text-lg backdrop-blur-sm shadow-xl shadow-black/20">
-            <p class="mb-4">
-                Passionné par la protection des infrastructures critiques et la sécurité défensive (Blue Team), je finalise mon cursus d'ingénieur en <strong class="text-teal-400">Master 2 Cybersécurité et IT</strong>. 
-            </p>
-            <p class="mb-4">
-                Avant de me spécialiser dans le traitement des alertes et l'automatisation de la réponse à incident (SOAR), j'ai consolidé de solides bases en administration systèmes et réseaux. Cette double casquette me permet de comprendre intimement les architectures que je dois défendre, que ce soit en contexte de recherche académique ou dans des environnements bancaires exigeants.
-            </p>
-            <p>
-                Je suis actuellement à la recherche d'une <strong class="text-white">alternance de 12 mois</strong> (rythme 2 semaines / 2 semaines) à partir de <strong class="text-teal-400">septembre 2026</strong> pour relever de nouveaux défis au sein d'un SOC ou d'une équipe de sécurité opérationnelle.
-            </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- COLONNE GAUCHE : CARTE PHOTO -->
+            <div class="lg:col-span-5 bg-[#121c2d] border border-slate-700 rounded-2xl p-3 flex flex-col h-[500px] relative shadow-xl">
+                <!-- Icône Bouclier (Haut Droite) -->
+                <div class="absolute top-6 right-6 bg-slate-900/60 p-2.5 rounded-full border border-cyan-500/30 z-10 backdrop-blur-sm">
+                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                
+                <!-- Zone Image -->
+                <div class="relative flex-grow rounded-xl overflow-hidden mb-4 bg-slate-800">
+                    <!-- REMPLACEZ 'photo.jpg' PAR LE NOM DE VOTRE IMAGE -->
+                    <img src="photo.jpg" alt="Max Dingao" class="absolute inset-0 w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                    
+                    <!-- Badge Recherche Alternance -->
+                    <div class="absolute bottom-4 left-4 bg-green-900/80 border border-green-500/50 text-green-400 px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 backdrop-blur-md">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <span>En recherche d'alternance</span>
+                    </div>
+                </div>
+
+                <!-- Localisation -->
+                <div class="text-slate-400 text-sm px-2 pb-2 font-medium">
+                    Valenciennes / Île-de-France. Disponible en septembre 2026
+                </div>
+            </div>
+
+            <!-- COLONNE DROITE : INFORMATIONS PROFIL -->
+            <div class="lg:col-span-7 flex flex-col justify-center py-4">
+                
+                <!-- Badge Profil professionnel -->
+                <div class="w-max border border-slate-700 bg-slate-800/40 text-slate-300 px-5 py-1.5 rounded-full text-sm font-medium mb-6">
+                    Profil professionnel
+                </div>
+
+                <!-- Nom et Prénom -->
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                    Max <span class="text-teal-400 text-2xl md:text-3xl font-bold align-middle">Dingao</span>
+                </h3>
+
+                <!-- Titre académique -->
+                <p class="text-slate-300 font-medium mb-6 text-lg">
+                    Étudiant en Master 2 Cybersécurité et IT à l'INSA Hauts-de-France
+                </p>
+
+                <!-- Description -->
+                <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-10">
+                    Spécialisé dans la sécurisation des infrastructures, la sécurité réseau, la supervision SOC et l'automatisation de la réponse à incident (SOAR). Fort d'un socle technique solide acquis lors de mes expériences en administration systèmes et support IT (IEMN-UPHF, CBT Bank), je suis activement à la recherche d'une alternance (rythme 2 sem. entreprise / 2 sem. formation).
+                </p>
+
+                <!-- Statistiques -->
+                <div class="grid grid-cols-2 gap-8 mb-10">
+                    <div class="text-center md:text-left">
+                        <div class="text-2xl font-bold text-white mb-1">2</div>
+                        <div class="text-sm text-slate-300 font-medium mb-1">Expériences IT & Cyber</div>
+                        <div class="text-xs text-slate-500">IEMN-UPHF, CBT Bank</div>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <div class="text-2xl font-bold text-white mb-1">3+</div>
+                        <div class="text-sm text-slate-300 font-medium mb-1">Projets SecOps</div>
+                        <div class="text-xs text-slate-500">SOAR Wazuh, RAG SOC, CTF, C</div>
+                    </div>
+                </div>
+
+                <!-- Mots clés compétences -->
+                <div class="flex flex-wrap items-center text-teal-400 text-sm font-medium">
+                    <svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span>Sécurité des infrastructures • SOC • Automatisation SOAR • IAM</span>
+                </div>
+
+            </div>
         </div>
     </section>
 
