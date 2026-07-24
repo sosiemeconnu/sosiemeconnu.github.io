@@ -4,98 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Max Dingao - Portfolio Cybersécurité</title>
-    <!-- Chargement de Tailwind CSS via CDN pour un prototypage rapide -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Ajout d'un effet visuel de fond inspiré de votre image */
         body {
-            background-color: #0f172a; /* Slate 900 */
+            background-color: #0b1120; /* Bleu très sombre / fond principal */
             background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 70%);
-            color: #f8fafc; /* Slate 50 */
+            color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        /* Style pour les cartes façon "glassmorphism" très léger */
+        .cyber-card {
+            background-color: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+            backdrop-filter: blur(8px);
+        }
+        .cyber-card:hover {
+            border-color: rgba(45, 212, 191, 0.4); /* teal-400 */
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col antialiased">
 
-  <!-- BARRE DE NAVIGATION -->
-    <nav class="flex justify-between items-center px-4 md:px-8 py-6 border-b border-slate-800 sticky top-0 bg-[#0f172a]/90 backdrop-blur-md z-50">
-        
-        <!-- Logo et Nom -->
-        <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 bg-teal-500 rounded-md shadow-[0_0_15px_#14b8a6]"></div>
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="flex justify-between items-center px-4 md:px-8 py-5 border-b border-slate-800 sticky top-0 bg-[#0b1120]/90 backdrop-blur-md z-50">
+        <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 bg-teal-500 rounded-md shadow-[0_0_12px_#14b8a6]"></div>
             <span class="text-xl font-bold tracking-wider hidden sm:block">Max Dingao</span>
         </div>
-        
-        <!-- Liens du menu (Centrés) -->
         <div class="hidden lg:flex space-x-8 text-sm font-medium text-slate-300">
-            <a href="#" class="text-teal-400 border-b-2 border-teal-400 pb-1">Accueil</a>
+            <a href="#" class="text-teal-400 font-semibold">Accueil</a>
             <a href="#a-propos" class="hover:text-white transition">À propos</a>
-            <a href="#competences" class="hover:text-white transition">Compétences</a>
             <a href="#parcours" class="hover:text-white transition">Parcours</a>
-            <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+            <a href="#competences" class="hover:text-white transition">Compétences</a>
+            <a href="#portfolio" class="hover:text-white transition">Portefeuille</a>
         </div>
-        
-        <!-- Section droite : Contact + Toggle Langue + Icônes -->
         <div class="flex items-center space-x-4 md:space-x-5">
-            <!-- Bouton Contact -->
-            <a href="https://www.linkedin.com/in/max-dingao-4128a826a/" target="_blank" class="hidden md:block bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold py-2 px-6 rounded-full transition text-sm">
+            <a href="#contact" class="hidden md:block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-6 rounded-full transition text-sm">
                 Contact
             </a>
-            
-            <!-- Ligne de séparation verticale -->
             <div class="hidden md:block w-px h-6 bg-slate-700"></div>
-            
-            <!-- TOGGLE FR / EN -->
+            <!-- TOGGLE FR/EN -->
             <div class="flex items-center bg-slate-800/80 rounded-full p-1 border border-slate-700 shadow-inner">
-                <!-- État actif (FR) - Fond bleu clair, texte foncé -->
-                <a href="#" class="bg-cyan-500 text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md transition">FR</a>
-                <!-- État inactif (EN) - Sans fond, texte clair -->
+                <a href="#" class="bg-cyan-500 text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md">FR</a>
                 <a href="#" class="text-slate-400 hover:text-white text-xs font-bold px-3 py-1.5 rounded-full transition">EN</a>
             </div>
-
-            <!-- Icône de recherche (comme sur l'image) -->
             <button class="text-slate-400 hover:text-white transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </button>
         </div>
-
     </nav>
 
-    <!-- SECTION PRINCIPALE (HERO) -->
-    <main class="flex-grow flex flex-col items-center justify-center px-4 text-center mt-20 mb-16">
+    <!-- 1. HERO SECTION -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 text-center mt-16 mb-20">
         
-        <!-- Badge statut -->
-        <div class="border border-green-500/50 bg-green-500/10 text-green-400 px-4 py-1.5 rounded-full text-sm font-medium mb-6 flex items-center space-x-2">
-            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            <span>Étudiant Master Cybersécurité</span>
+        <div class="border border-slate-700 bg-slate-800/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium mb-8 flex items-center space-x-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span>Étudiant ingénieur cybersécurité</span>
         </div>
 
-        <!-- Titre principal -->
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-            Sécuriser, Superviser et Automatiser <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500">
-                Les Infrastructures IT
+            Sécuriser <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
+                Les Infrastructures et Systèmes d'Information
             </span>
         </h1>
 
-        <!-- Bio courte -->
-        <p class="text-slate-400 max-w-2xl text-lg mb-8">
-            Étudiant en Master 2 Cybersécurité et IT à l'INSA Hauts-de-France. À la recherche d'une alternance de 12 mois en sécurité opérationnelle, SOC ou intégration de solutions de sécurité à partir de septembre 2026.
+        <p class="text-slate-400 max-w-2xl text-lg mb-8 mt-4 leading-relaxed">
+            Étudiant en cybersécurité à l'INSA Hauts-de-France (Master 2). En recherche d'alternance en sécurité des infrastructures IT, SOC ou sécurité opérationnelle.
         </p>
 
-        <!-- Badges Compétences -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12">
-            <span class="border border-slate-700 bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-sm">🛡️ SOC / SIEM (Wazuh, ELK)</span>
-            <span class="border border-slate-700 bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-sm">⚙️ SOAR & Automatisation</span>
-            <span class="border border-slate-700 bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-sm">🐧 Admin Linux & Docker</span>
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <span class="border border-slate-700 bg-slate-800/50 text-slate-300 px-4 py-1.5 rounded-full text-sm flex items-center"><svg class="w-4 h-4 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> TryHackMe & HackTheBox</span>
+            <span class="border border-slate-700 bg-slate-800/50 text-slate-300 px-4 py-1.5 rounded-full text-sm flex items-center"><svg class="w-4 h-4 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> SOC & Incident Response</span>
+            <span class="border border-slate-700 bg-slate-800/50 text-slate-300 px-4 py-1.5 rounded-full text-sm flex items-center"><svg class="w-4 h-4 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> SysAdmin (Linux/Windows)</span>
         </div>
 
-        <!-- Boutons d'action (CTA) -->
-        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="https://www.linkedin.com/in/max-dingao-4128a826a/" target="_blank" class="flex items-center justify-center space-x-2 border border-teal-500 text-teal-400 hover:bg-teal-500/10 px-8 py-3 rounded-md font-medium transition">
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
+            <a href="#contact" class="flex items-center justify-center space-x-2 border border-teal-500 text-white hover:bg-teal-500/10 px-8 py-3 rounded-md font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                 <span>Me contacter</span>
             </a>
@@ -103,323 +90,513 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                 <span>Voir mon parcours</span>
             </a>
-            <!-- Remplacez le lien '#' par le lien réel de votre CV hébergé -->
-            <a href="#" target="_blank" class="flex items-center justify-center space-x-2 text-slate-300 hover:text-white px-8 py-3 transition">
+            <a href="CV_Max_Dingao.pdf" target="_blank" class="flex items-center justify-center space-x-2 text-slate-300 hover:text-white px-8 py-3 transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                 <span>Télécharger mon CV</span>
             </a>
         </div>
 
-    </main>
-
-    <!-- SECTION STATISTIQUES (BANNER) -->
-    <div class="max-w-5xl mx-auto w-full px-4 mb-20">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm shadow-xl">
-            <div class="text-center border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0">
-                <div class="text-3xl font-bold text-white mb-1">3+</div>
-                <div class="text-xs text-slate-400 font-medium tracking-widest uppercase">Projets SecOps</div>
+        <!-- Bannières stats -->
+        <div class="max-w-4xl mx-auto w-full cyber-card rounded-xl grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-700">
+            <div class="p-6 text-center">
+                <div class="text-3xl font-bold text-white mb-1">3</div>
+                <div class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Expériences IT/Cyber</div>
             </div>
-            <div class="text-center border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0">
-                <div class="text-3xl font-bold text-white mb-1">Top 5%</div>
-                <div class="text-xs text-slate-400 font-medium tracking-widest uppercase">TryHackMe</div>
+            <div class="p-6 text-center">
+                <div class="text-3xl font-bold text-white mb-1">4+</div>
+                <div class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Projets Techniques</div>
             </div>
-            <div class="text-center border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0">
+            <div class="p-6 text-center">
                 <div class="text-3xl font-bold text-white mb-1">2</div>
-                <div class="text-xs text-slate-400 font-medium tracking-widest uppercase">Expériences IT</div>
+                <div class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Diplômes (INSA)</div>
             </div>
-            <div class="text-center">
+            <div class="p-6 text-center">
                 <div class="text-3xl font-bold text-white mb-1">2026</div>
-                <div class="text-xs text-teal-400 font-medium tracking-widest uppercase">Disponibilité (Sept.)</div>
+                <div class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Alternance (Sept. 2026)</div>
             </div>
         </div>
-    </div>
+    </main>
 
-   <!-- SECTION À PROPOS (Design Profil) -->
-    <section id="a-propos" class="max-w-6xl mx-auto w-full px-4 mb-24 pt-16 scroll-mt-20">
-        <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
-            <span class="text-teal-500 mr-3">#</span> À propos de moi
-        </h2>
-
+    <!-- 2. À PROPOS (Profil format carte) -->
+    <section id="a-propos" class="max-w-6xl mx-auto w-full px-4 mb-24 scroll-mt-24">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
-            <!-- COLONNE GAUCHE : CARTE PHOTO -->
-            <div class="lg:col-span-5 bg-[#121c2d] border border-slate-700 rounded-2xl p-3 flex flex-col h-[500px] relative shadow-xl">
-                <!-- Icône Bouclier (Haut Droite) -->
-                <div class="absolute top-6 right-6 bg-slate-900/60 p-2.5 rounded-full border border-cyan-500/30 z-10 backdrop-blur-sm">
-                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
+            <!-- Image gauche -->
+            <div class="lg:col-span-5 bg-[#0f172a] border border-slate-700 rounded-2xl p-4 flex flex-col h-[450px] relative shadow-lg">
+                <div class="absolute top-6 right-6 bg-slate-900/60 p-2.5 rounded-full border border-cyan-500/30 z-10">
+                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
-                
-                <!-- Zone Image -->
                 <div class="relative flex-grow rounded-xl overflow-hidden mb-4 bg-slate-800">
-                    <!-- REMPLACEZ 'photo.jpg' PAR LE NOM DE VOTRE IMAGE -->
-                    <img src="Photo.jpg" alt="Max Dingao" class="absolute inset-0 w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition duration-500">
-                    
-                    <!-- Badge Recherche Alternance -->
-                    <div class="absolute bottom-4 left-4 bg-green-900/80 border border-green-500/50 text-green-400 px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 backdrop-blur-md">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
-                        <span>En recherche d'alternance</span>
+                    <img src="photo.jpg" alt="Max Dingao" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition duration-500">
+                    <div class="absolute bottom-4 left-4 bg-green-900/80 border border-green-500 text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center">
+                        <svg class="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        En recherche d'alternance
                     </div>
                 </div>
-
-                <!-- Localisation -->
-                <div class="text-slate-400 text-sm px-2 pb-2 font-medium">
+                <div class="text-slate-400 text-xs px-2 pb-1 font-medium text-center">
                     Valenciennes / Île-de-France. Disponible en septembre 2026
                 </div>
             </div>
 
-            <!-- COLONNE DROITE : INFORMATIONS PROFIL -->
-            <div class="lg:col-span-7 flex flex-col justify-center py-4">
-                
-                <!-- Badge Profil professionnel -->
-                <div class="w-max border border-slate-700 bg-slate-800/40 text-slate-300 px-5 py-1.5 rounded-full text-sm font-medium mb-6">
-                    Profil professionnel
-                </div>
-
-                <!-- Nom et Prénom -->
-                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
-                    Max <span class="text-teal-400 text-2xl md:text-3xl font-bold align-middle">Dingao</span>
-                </h3>
-
-                <!-- Titre académique -->
-                <p class="text-slate-300 font-medium mb-6 text-lg">
-                    Étudiant en Master 2 Cybersécurité et IT à l'INSA Hauts-de-France
+            <!-- Texte droite -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+                <div class="w-max border border-slate-700 bg-slate-800/50 text-slate-300 px-4 py-1 rounded-full text-xs font-medium mb-4">Profil professionnel</div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-3">Max <span class="text-teal-400 text-2xl align-middle">Dingao</span></h2>
+                <p class="text-slate-300 font-medium mb-6 text-sm">Étudiant ingénieur cybersécurité, Master 2 IT à l'INSA Hauts-de-France</p>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                    Spécialisé dans la sécurisation des infrastructures, la sécurité réseau, la supervision SOC et l'automatisation. Fort d'expériences pratiques en administration systèmes (IEMN-UPHF) et en support IT (CBT Bank), je maîtrise les environnements complexes. Je suis activement à la recherche d'une alternance (rythme 2 sem. entreprise / 2 sem. formation) pour consolider la posture de sécurité d'un SI.
                 </p>
-
-                <!-- Description -->
-                <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-10">
-                    Spécialisé dans la sécurisation des infrastructures, la sécurité réseau, la supervision SOC et l'automatisation de la réponse à incident (SOAR). Fort d'un socle technique solide acquis lors de mes expériences en administration systèmes et support IT (IEMN-UPHF, CBT Bank), je suis activement à la recherche d'une alternance (rythme 2 sem. entreprise / 2 sem. formation).
-                </p>
-
-                <!-- Statistiques -->
-                <div class="grid grid-cols-2 gap-8 mb-10">
-                    <div class="text-center md:text-left">
-                        <div class="text-2xl font-bold text-white mb-1">2</div>
-                        <div class="text-sm text-slate-300 font-medium mb-1">Expériences IT & Cyber</div>
+                <div class="grid grid-cols-2 gap-6 mb-8 text-sm text-center md:text-left">
+                    <div>
+                        <div class="text-xl font-bold text-white mb-1">2</div>
+                        <div class="text-slate-300 font-medium mb-1">Expériences en informatique</div>
                         <div class="text-xs text-slate-500">IEMN-UPHF, CBT Bank</div>
                     </div>
-                    <div class="text-center md:text-left">
-                        <div class="text-2xl font-bold text-white mb-1">3+</div>
-                        <div class="text-sm text-slate-300 font-medium mb-1">Projets SecOps</div>
-                        <div class="text-xs text-slate-500">SOAR Wazuh, RAG SOC, CTF, C</div>
+                    <div>
+                        <div class="text-xl font-bold text-white mb-1">4</div>
+                        <div class="text-slate-300 font-medium mb-1">Projets techniques majeurs</div>
+                        <div class="text-xs text-slate-500">SOAR, RAG SOC, Phishing PoC, C</div>
                     </div>
                 </div>
-
-                <!-- Mots clés compétences -->
-                <div class="flex flex-wrap items-center text-teal-400 text-sm font-medium">
-                    <svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                    </svg>
-                    <span>Sécurité des infrastructures • SOC • Automatisation SOAR • IAM</span>
+                <div class="flex flex-wrap items-center text-green-400 text-xs font-medium">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    Sécurité des infrastructures • SOC & SOAR • Réseaux • IAM
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SECTION COMPÉTENCES -->
-    <section id="competences" class="max-w-5xl mx-auto w-full px-4 mb-24 pt-16 scroll-mt-20">
-        <h2 class="text-3xl font-bold text-white mb-2 flex items-center">
-            <span class="text-teal-500 mr-3">#</span> Compétences Techniques
-        </h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-8"></div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Bloc Cyber -->
-            <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-6 hover:border-teal-500/50 transition duration-300">
-                <div class="text-teal-400 text-3xl mb-4">🛡️</div>
-                <h3 class="text-xl font-bold text-white mb-4">SecOps & SOC</h3>
-                <ul class="space-y-2 text-slate-400">
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>SIEM (Wazuh, Stack ELK)</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>SOAR (Shuffle) & CTI (VirusTotal)</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>Analyse de vulnérabilités (Nmap)</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>Pratique CTF (TryHackMe, HackTheBox)</li>
-                </ul>
-            </div>
-
-            <!-- Bloc SysAdmin -->
-            <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition duration-300">
-                <div class="text-cyan-400 text-3xl mb-4">⚙️</div>
-                <h3 class="text-xl font-bold text-white mb-4">Systèmes & Réseaux</h3>
-                <ul class="space-y-2 text-slate-400">
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Linux (Kali, Debian) & Windows</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Conteneurisation (Docker)</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>IAM (Active Directory, LDAP, Kerberos)</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Architectures réseaux (TCP/IP)</li>
-                </ul>
-            </div>
-
-            <!-- Bloc Scripting -->
-            <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-6 hover:border-indigo-500/50 transition duration-300">
-                <div class="text-indigo-400 text-3xl mb-4">💻</div>
-                <h3 class="text-xl font-bold text-white mb-4">Scripting & Outils</h3>
-                <ul class="space-y-2 text-slate-400">
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>Python & Bash</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>Automatisation de workflows</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>LaTeX (Documentation & Rapports)</li>
-                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>C (Programmation système)</li>
-                </ul>
-            </div>
+    <!-- 3. COMPÉTENCES (Barres de progression) -->
+    <section id="competences" class="max-w-6xl mx-auto w-full px-4 mb-24 scroll-mt-24">
+        <div class="text-center mb-12">
+            <span class="border border-slate-700 bg-slate-800 px-4 py-1 rounded-full text-xs font-medium text-slate-400">Forts de pointe</span>
+            <h2 class="text-3xl font-bold text-white mt-6 mb-2">Cybersécurité & Compétences</h2>
+            <p class="text-slate-400 text-sm">Spécialisé dans la sécurisation des infrastructures IT, l'automatisation et la détection d'incidents.</p>
         </div>
-    </section>
 
-    <!-- SECTION PARCOURS -->
-    <section id="parcours" class="max-w-5xl mx-auto w-full px-4 mb-24 pt-16 scroll-mt-20">
-        <h2 class="text-3xl font-bold text-white mb-2 flex items-center">
-            <span class="text-teal-500 mr-3">#</span> Parcours & Formations
-        </h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-12"></div>
-
-        <div class="relative border-l border-slate-700 ml-3 md:ml-6 space-y-12">
+        <h3 class="text-xl font-bold text-white mb-6 text-center">Spécialisations Cybersécurité</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             
-            <!-- INSA Master -->
-            <div class="relative pl-8 md:pl-0">
-                <div class="md:flex items-center justify-between">
-                    <div class="md:w-1/4 text-teal-400 font-bold mb-2 md:mb-0 md:text-right md:pr-10">Sept 2025 - 2027</div>
-                    <div class="absolute left-[-5px] top-1.5 md:left-[24.5%] w-3 h-3 bg-teal-500 rounded-full shadow-[0_0_10px_#14b8a6]"></div>
-                    <div class="md:w-3/4 bg-slate-800/30 border border-slate-700 rounded-xl p-6 hover:border-teal-500/50 transition">
-                        <h3 class="text-xl font-bold text-white">Master en Cybersécurité et IT</h3>
-                        <p class="text-slate-400 font-medium mb-2">INSA Hauts-de-France, Valenciennes</p>
-                        <p class="text-slate-400 text-sm">Spécialisation en administration d'infrastructures sécurisées, SOC et maintien en condition opérationnelle.</p>
-                    </div>
+            <!-- Carte 1 -->
+            <div class="cyber-card rounded-xl p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-lg font-bold text-white leading-tight">SOC & Réponse<br>aux incidents</h4>
+                    <span class="bg-slate-800 text-cyan-400 text-xs font-bold px-2 py-1 rounded">8/10</span>
                 </div>
+                <div class="flex justify-between text-xs text-slate-400 mb-2"><span>Niveau</span><span>8/10</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-4">
+                    <div class="bg-gradient-to-r from-teal-400 to-cyan-500 h-1.5 rounded-full w-[80%]"></div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Détection d'incidents, gestion des alertes sur SIEM (Wazuh, ELK) et qualification des menaces.
+                </p>
             </div>
 
-            <!-- IEMN-UPHF -->
-            <div class="relative pl-8 md:pl-0">
-                <div class="md:flex items-center justify-between">
-                    <div class="md:w-1/4 text-cyan-400 font-bold mb-2 md:mb-0 md:text-right md:pr-10">Avr 2025 - Juil 2025</div>
-                    <div class="absolute left-[-5px] top-1.5 md:left-[24.5%] w-3 h-3 bg-cyan-500 rounded-full shadow-[0_0_10px_#06b6d4]"></div>
-                    <div class="md:w-3/4 bg-slate-800/30 border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition">
-                        <h3 class="text-xl font-bold text-white">Administration Systèmes, Réseaux et Support</h3>
-                        <p class="text-slate-400 font-medium mb-2">Laboratoire IEMN-UPHF</p>
-                        <p class="text-slate-400 text-sm">Maintien en condition opérationnelle du parc informatique. Déploiement d'infrastructure IAM (Samba, LDAP, Kerberos) et automatisation des procédures de contrôle.</p>
-                    </div>
+            <!-- Carte 2 -->
+            <div class="cyber-card rounded-xl p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-lg font-bold text-white leading-tight">SOAR &<br>Automatisation</h4>
+                    <span class="bg-slate-800 text-cyan-400 text-xs font-bold px-2 py-1 rounded">8/10</span>
                 </div>
+                <div class="flex justify-between text-xs text-slate-400 mb-2"><span>Niveau</span><span>8/10</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-4">
+                    <div class="bg-gradient-to-r from-teal-400 to-cyan-500 h-1.5 rounded-full w-[80%]"></div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Orchestration de sécurité via Shuffle, intégration d'API (VirusTotal, Discord) et scripts d'automatisation.
+                </p>
             </div>
 
-            <!-- INSA Licence -->
-            <div class="relative pl-8 md:pl-0">
-                <div class="md:flex items-center justify-between">
-                    <div class="md:w-1/4 text-slate-400 font-bold mb-2 md:mb-0 md:text-right md:pr-10">Sept 2024 - 2025</div>
-                    <div class="absolute left-[-5px] top-1.5 md:left-[24.5%] w-3 h-3 bg-slate-500 rounded-full"></div>
-                    <div class="md:w-3/4 bg-slate-800/30 border border-slate-700 rounded-xl p-6 hover:border-slate-500/50 transition">
-                        <h3 class="text-xl font-bold text-white">Licence Pro. Réseaux Informatiques</h3>
-                        <p class="text-slate-400 font-medium mb-2">INSA Hauts-de-France</p>
-                        <p class="text-slate-400 text-sm">Acquisition des fondamentaux en architecture réseau et télécommunications.</p>
-                    </div>
+            <!-- Carte 3 -->
+            <div class="cyber-card rounded-xl p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-lg font-bold text-white leading-tight">Analyse de vulnérabilités<br>& Pentest Lab</h4>
+                    <span class="bg-slate-800 text-teal-400 text-xs font-bold px-2 py-1 rounded">7/10</span>
                 </div>
+                <div class="flex justify-between text-xs text-slate-400 mb-2"><span>Niveau</span><span>7/10</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-4">
+                    <div class="bg-gradient-to-r from-teal-400 to-teal-500 h-1.5 rounded-full w-[70%]"></div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Scans d'environnements (Nmap), compréhension des CVE, et pratique offensive sur TryHackMe / HackTheBox.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-6 text-center">Systèmes, Réseaux & Scripting</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Carte 4 -->
+            <div class="cyber-card rounded-xl p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-lg font-bold text-white leading-tight">Administration Systèmes<br>& Architectures</h4>
+                    <span class="bg-slate-800 text-cyan-400 text-xs font-bold px-2 py-1 rounded">8/10</span>
+                </div>
+                <div class="flex justify-between text-xs text-slate-400 mb-2"><span>Niveau</span><span>8/10</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-4">
+                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-1.5 rounded-full w-[80%]"></div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Déploiement et maintien de parcs Windows/Linux, environnement Kali, Docker, et gestion IAM (AD, LDAP, Kerberos).
+                </p>
             </div>
 
-            <!-- CBT Bank -->
-            <div class="relative pl-8 md:pl-0">
-                <div class="md:flex items-center justify-between">
-                    <div class="md:w-1/4 text-slate-400 font-bold mb-2 md:mb-0 md:text-right md:pr-10">Août 2023 - Oct 2023</div>
-                    <div class="absolute left-[-5px] top-1.5 md:left-[24.5%] w-3 h-3 bg-slate-600 rounded-full"></div>
-                    <div class="md:w-3/4 bg-slate-800/30 border border-slate-700 rounded-xl p-6 hover:border-slate-500/50 transition">
-                        <h3 class="text-xl font-bold text-white">Support IT et Sécurité des Réseaux</h3>
-                        <p class="text-slate-400 font-medium mb-2">Commercial Bank of Chad (CBT)</p>
-                        <p class="text-slate-400 text-sm">Traitement des incidents N1/N2 dans un environnement bancaire critique. Diagnostic de l'architecture réseau et sécurisation des flux.</p>
-                    </div>
+            <!-- Carte 5 -->
+            <div class="cyber-card rounded-xl p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-lg font-bold text-white leading-tight">Scripting &<br>Développement</h4>
+                    <span class="bg-slate-800 text-teal-400 text-xs font-bold px-2 py-1 rounded">7/10</span>
                 </div>
+                <div class="flex justify-between text-xs text-slate-400 mb-2"><span>Niveau</span><span>7/10</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-4">
+                    <div class="bg-gradient-to-r from-teal-400 to-green-500 h-1.5 rounded-full w-[70%]"></div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Développement Python/Bash pour l'automatisation, programmation C (Optimisation algorithmique) et rédaction LaTeX.
+                </p>
             </div>
-
         </div>
     </section>
 
-    <!-- SECTION PORTFOLIO (PROJETS) -->
-    <section id="portfolio" class="max-w-5xl mx-auto w-full px-4 mb-24 pt-16 scroll-mt-20">
-        <h2 class="text-3xl font-bold text-white mb-2 flex items-center">
-            <span class="text-teal-500 mr-3">#</span> Projets Techniques
-        </h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-8"></div>
+    <!-- 4. PARCOURS PROFESSIONNEL (Chronologie détaillée) -->
+    <section id="parcours" class="max-w-5xl mx-auto w-full px-4 mb-24 scroll-mt-24">
+        <div class="text-center mb-12">
+            <span class="border border-slate-700 bg-slate-800 px-4 py-1 rounded-full text-xs font-medium text-slate-400">Formations & Expériences</span>
+            <h2 class="text-3xl font-bold text-white mt-6 mb-2">Parcours professionnel</h2>
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto">Expériences pratiques en administration systèmes, support réseaux et formation académique d'ingénieur.</p>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-6">
             
-            <!-- Projet SOAR -->
-            <div class="group relative bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden hover:border-teal-500 transition duration-300 shadow-lg">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-3xl">⚙️</div>
-                        <span class="text-xs font-bold px-2 py-1 bg-teal-500/20 text-teal-400 rounded">Juil 2026</span>
+            <!-- EXP 1 : IEMN -->
+            <div class="cyber-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                <div class="md:w-2/3">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h3 class="text-xl font-bold text-white">Administration Systèmes, Réseaux & Sécurité</h3>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full border border-slate-700">Avr 2025 – Juil 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition">Pipeline SOAR (Wazuh & Shuffle)</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Conception d'une architecture d'automatisation de la réponse à incident intégrant Wazuh (SIEM), Shuffle (SOAR), l'API VirusTotal pour la CTI et Discord pour l'alerting.
+                    <p class="text-slate-400 text-sm font-medium mb-4">Laboratoire IEMN-UPHF</p>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                        Mission de 4 mois orientée administration et maintien en condition opérationnelle. Gestion d'environnements hétérogènes (Linux/Windows), support technique aux chercheurs, et sécurisation des accès.
                     </p>
-                    <div class="flex space-x-2">
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">SecOps</span>
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Automatisation</span>
+                    <div class="mb-2 text-sm font-bold text-white">Technologies utilisées :</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Linux / Windows Server</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Samba / LDAP</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Kerberos</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Support IT</span>
                     </div>
+                </div>
+                <div class="md:w-1/3 border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                    <h4 class="text-lg font-bold text-white mb-4">Réalisations notables :</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-sm text-slate-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Maintien en condition opérationnelle du parc
+                        </li>
+                        <li class="flex items-start text-sm text-slate-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Déploiement d'une infrastructure IAM stricte
+                        </li>
+                        <li class="flex items-start text-sm text-slate-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Sensibilisation et support pédagogique
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Projet RAG SOC -->
-            <div class="group relative bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden hover:border-cyan-500 transition duration-300 shadow-lg">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-3xl">🤖</div>
-                        <span class="text-xs font-bold px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded">Juil 2026</span>
+            <!-- EXP 2 : CBT -->
+            <div class="cyber-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                <div class="md:w-2/3">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h3 class="text-xl font-bold text-white">Sécurité des Réseaux et Support IT</h3>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full border border-slate-700">Août 2023 – Oct 2023</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Assistant RAG pour SOC</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Développement d'un assistant documentaire hybride (Retrieval-Augmented Generation) pour accélérer le tri de l'information et assister la prise de décision lors du traitement d'alertes complexes.
+                    <p class="text-slate-400 text-sm font-medium mb-4">Commercial Bank of Chad (CBT)</p>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                        Intervention au sein d'un environnement bancaire critique. Résolution d'incidents techniques de niveaux 1 et 2 et diagnostic des flux pour assurer la continuité de service.
                     </p>
-                    <div class="flex space-x-2">
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Python</span>
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Analyse</span>
+                    <div class="mb-2 text-sm font-bold text-white">Technologies utilisées :</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Réseaux TCP/IP</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Diagnostic Flux</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs px-3 py-1 rounded-full">Ticketing</span>
                     </div>
+                </div>
+                <div class="md:w-1/3 border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                    <h4 class="text-lg font-bold text-white mb-4">Réalisations notables :</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-sm text-slate-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Traitement d'incidents N1/N2
+                        </li>
+                        <li class="flex items-start text-sm text-slate-300">
+                            <svg class="w-5 h-5 text-teal-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Analyse de la fiabilité des architectures
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Projet Phishing PoC -->
-            <div class="group relative bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden hover:border-red-500 transition duration-300 shadow-lg">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-3xl">🎣</div>
-                        <span class="text-xs font-bold px-2 py-1 bg-red-500/20 text-red-400 rounded">Juin 2026</span>
+            <!-- FORMATION : INSA M2 -->
+            <div class="cyber-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                <div class="md:w-2/3">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h3 class="text-xl font-bold text-white">Master Cybersécurité et Systèmes d'Information</h3>
+                        <span class="bg-slate-800 text-slate-300 text-xs px-3 py-1 rounded-full border border-slate-700">2025 – 2027</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">PoC Android Phishing</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Design et exécution d'une preuve de concept d'application malveillante Android (reverse engineering et injection de code). Rapport technique complet formaté sous LaTeX.
+                    <p class="text-slate-400 text-sm font-medium mb-4">INSA Hauts-de-France, Valenciennes</p>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                        Préparation du diplôme de Master (actuellement M1, passage en M2 en septembre 2026). Spécialisation en sécurisation des infrastructures, SOC, et ingénierie système/réseau.
                     </p>
-                    <div class="flex space-x-2">
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Offensif</span>
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Sensibilisation</span>
-                    </div>
                 </div>
-            </div>
-
-            <!-- Projet C -->
-            <div class="group relative bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden hover:border-indigo-500 transition duration-300 shadow-lg">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-3xl">🧩</div>
-                        <span class="text-xs font-bold px-2 py-1 bg-indigo-500/20 text-indigo-400 rounded">2026</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition">Set-Union Knapsack Problem</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Projet académique d'optimisation mathématique (SUKP). Implémentation de procédures de recherche locale et développement complet en langage C.
-                    </p>
-                    <div class="flex space-x-2">
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">C</span>
-                        <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Algorithmique</span>
-                    </div>
+                <div class="md:w-1/3 border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                    <h4 class="text-lg font-bold text-white mb-4">Cursus précédent :</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-sm text-slate-300">
+                            <svg class="w-5 h-5 text-cyan-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21l9-5-9-5-9 5 9 5z"></path></svg>
+                            Licence Pro. Réseaux Informatiques (INSA, 2024-2025)
+                        </li>
+                    </ul>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-[#0f172a] py-8 text-center text-slate-500 text-sm mt-auto">
-        <p>© 2026 Max Dingao. Tous droits réservés.</p>
-        <div class="flex justify-center space-x-4 mt-4">
-            <a href="https://github.com/sosiemeconnu" target="_blank" class="hover:text-white transition">GitHub</a>
-            <a href="https://www.linkedin.com/in/max-dingao-4128a826a/" target="_blank" class="hover:text-white transition">LinkedIn</a>
+    <!-- 5. PORTEFEUILLE (Grille projets/certifs) -->
+    <section id="portfolio" class="max-w-6xl mx-auto w-full px-4 mb-24 scroll-mt-24">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Projets et Formations</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Projet 1 -->
+            <div class="cyber-card rounded-xl p-6 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold text-white pr-4">Pipeline SOAR SOC</h3>
+                    <span class="bg-green-900/50 text-green-400 border border-green-500/50 text-xs px-2 py-1 rounded">Terminé</span>
+                </div>
+                <p class="text-slate-400 text-xs font-medium mb-3">Automatisation & Réponse</p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Conception d'une architecture intégrant Wazuh (SIEM), Shuffle (SOAR) et VirusTotal pour l'isolation automatique des menaces.
+                </p>
+                <p class="text-slate-500 text-xs mt-auto">Juil. 2026</p>
+                <div class="absolute bottom-6 right-6">
+                    <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="cyber-card rounded-xl p-6 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold text-white pr-4">Assistant RAG pour SOC</h3>
+                    <span class="bg-green-900/50 text-green-400 border border-green-500/50 text-xs px-2 py-1 rounded">Terminé</span>
+                </div>
+                <p class="text-slate-400 text-xs font-medium mb-3">Intelligence Artificielle & Python</p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Développement d'un assistant documentaire hybride (Retrieval-Augmented Generation) pour accélérer le traitement des alertes.
+                </p>
+                <p class="text-slate-500 text-xs mt-auto">Juil. 2026</p>
+                <div class="absolute bottom-6 right-6">
+                    <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="cyber-card rounded-xl p-6 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold text-white pr-4">PoC Android Phishing</h3>
+                    <span class="bg-green-900/50 text-green-400 border border-green-500/50 text-xs px-2 py-1 rounded">Terminé</span>
+                </div>
+                <p class="text-slate-400 text-xs font-medium mb-3">Sécurité Offensive (Red Team)</p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Exécution d'une preuve de concept (reverse engineering, injection). Rédaction du rapport d'audit formaté sous LaTeX.
+                </p>
+                <p class="text-slate-500 text-xs mt-auto">Juin 2026</p>
+                <div class="absolute bottom-6 right-6">
+                    <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="cyber-card rounded-xl p-6 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold text-white pr-4">Set-Union Knapsack</h3>
+                    <span class="bg-green-900/50 text-green-400 border border-green-500/50 text-xs px-2 py-1 rounded">Terminé</span>
+                </div>
+                <p class="text-slate-400 text-xs font-medium mb-3">Algorithmique & Langage C</p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Projet académique complexe d'optimisation mathématique (SUKP). Développement de procédures de recherche locale en C.
+                </p>
+                <p class="text-slate-500 text-xs mt-auto">2026</p>
+                <div class="absolute bottom-6 right-6">
+                    <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+            </div>
+
+            <!-- TryHackMe -->
+            <div class="cyber-card rounded-xl p-6 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold text-white pr-4">Laboratoires CTF</h3>
+                    <span class="bg-teal-900/50 text-teal-400 border border-teal-500/50 text-xs px-2 py-1 rounded">En cours</span>
+                </div>
+                <p class="text-slate-400 text-xs font-medium mb-3">TryHackMe / HackTheBox</p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Entraînement continu sur des plateformes de simulation d'attaques pour comprendre les vulnérabilités et affiner la détection.
+                </p>
+                <p class="text-slate-500 text-xs mt-auto">Veille active</p>
+                <div class="absolute bottom-6 right-6">
+                    <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. POURQUOI CHOISIR (4 colonnes) -->
+    <section class="max-w-5xl mx-auto w-full px-4 mb-24">
+        <div class="bg-slate-800/30 border border-slate-700 rounded-3xl p-10 md:p-16 text-center">
+            <span class="border border-slate-700 bg-slate-800 px-4 py-1 rounded-full text-xs font-medium text-slate-400">Pourquoi choisir Max ?</span>
+            <h2 class="text-3xl font-bold text-white mt-6 mb-4">Pourquoi choisir <span class="text-slate-400 text-xl font-normal">Max Dingao ?</span></h2>
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto mb-12">
+                Un profil hybride, alliant une solide culture de l'administration systèmes (pour comprendre ce qu'on défend) et une spécialisation technique en sécurité opérationnelle.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex justify-center mb-4 text-cyan-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Formation Ingénieur</h3>
+                    <p class="text-slate-400 text-xs">Master 2 Cybersécurité à l'INSA : un cursus exigeant orienté SI et réseaux.</p>
+                </div>
+                <!-- Col 2 -->
+                <div>
+                    <div class="flex justify-center mb-4 text-cyan-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Bases Solides</h3>
+                    <p class="text-slate-400 text-xs">Administration de parcs hétérogènes et support N1/N2 en milieu bancaire.</p>
+                </div>
+                <!-- Col 3 -->
+                <div>
+                    <div class="flex justify-center mb-4 text-cyan-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Projets SecOps</h3>
+                    <p class="text-slate-400 text-xs">Mise en place concrète de SIEM et de pipelines d'automatisation SOAR.</p>
+                </div>
+                <!-- Col 4 -->
+                <div>
+                    <div class="flex justify-center mb-4 text-cyan-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Curiosité Tech</h3>
+                    <p class="text-slate-400 text-xs">Pratique CTF continue, scripting Python/Bash et automatisation Docker.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA / DISPONIBILITÉ -->
+    <section class="w-full bg-[#080d17] border-t border-slate-800 py-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Je suis disponible en alternance à partir de septembre 2026</h2>
+        <p class="text-slate-400 text-sm max-w-2xl mx-auto mb-10 leading-relaxed">
+            Rythme : 2 semaines en entreprise / 2 semaines en formation. Domaines recherchés : sécurité des infrastructures IT, équipe SOC/CERT, intégration de solutions de sécurité, gestion des vulnérabilités.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-10">
+            <a href="mailto:maxdingao@gmail.com" class="flex items-center justify-center space-x-2 bg-green-400 hover:bg-green-500 text-slate-900 px-8 py-3 rounded-md font-bold transition w-full sm:w-auto">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                <span>Me contacter</span>
+            </a>
+            <a href="https://www.linkedin.com/in/max-dingao-4128a826a/" target="_blank" class="flex items-center justify-center space-x-2 border border-slate-600 text-slate-300 hover:border-teal-400 hover:text-teal-400 px-8 py-3 rounded-md font-medium transition w-full sm:w-auto">
+                <span>LinkedIn</span>
+            </a>
+            <a href="#parcours" class="flex items-center justify-center space-x-2 border border-slate-600 text-slate-300 hover:border-green-400 hover:text-green-400 px-8 py-3 rounded-md font-medium transition w-full sm:w-auto">
+                <span>Mon parcours</span>
+            </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            <span class="flex items-center text-teal-400 text-sm font-medium"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg> SIEM & SOAR</span>
+            <span class="flex items-center text-green-400 text-sm font-medium"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> Sécurité des Réseaux</span>
+            <span class="flex items-center text-cyan-400 text-sm font-medium"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg> Pentest & Audits</span>
+        </div>
+    </section>
+    <!-- FOOTER COMPLET (Fin de la page d'accueil) -->
+    <footer class="bg-[#0b1120] border-t border-slate-800 pt-16 pb-8 text-sm">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Colonne 1 : Bio & Logo -->
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="w-6 h-6 bg-teal-500 rounded-md"></div>
+                    <span class="text-lg font-bold text-white tracking-wider">Max Dingao</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    Étudiant en Master 2 Cybersécurité et IT à l'INSA Hauts-de-France. Spécialisé en sécurité des infrastructures, SOC, automatisation SOAR et administration systèmes.
+                </p>
+                <a href="https://www.linkedin.com/in/max-dingao-4128a826a/" target="_blank" class="inline-flex items-center justify-center w-8 h-8 bg-slate-700/50 hover:bg-slate-600 rounded-md text-slate-300 transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+
+            <!-- Colonne 2 : Navigation & Réseaux -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Navigation</h4>
+                <ul class="space-y-3 mb-8">
+                    <li><a href="#a-propos" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> À propos</a></li>
+                    <li><a href="#parcours" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Parcours</a></li>
+                    <li><a href="#competences" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Compétences</a></li>
+                    <li><a href="#portfolio" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Portefeuille</a></li>
+                </ul>
+
+                <h4 class="text-white font-bold text-lg mb-4">Réseaux</h4>
+                <ul class="space-y-3">
+                    <li><a href="https://www.linkedin.com/in/max-dingao-4128a826a/" target="_blank" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> LinkedIn</a></li>
+                    <li><a href="https://github.com/sosiemeconnu" target="_blank" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> GitHub</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Liens utiles -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Privilèges utiles</h4>
+                <ul class="space-y-3">
+                    <li><a href="#contact" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Contact</a></li>
+                    <li><a href="CV_Max_Dingao.pdf" target="_blank" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Télécharger le CV</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Politique de confidentialité</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-teal-400 transition flex items-center"><span class="text-green-500 mr-2">✓</span> Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4 : Contact & Newsletter -->
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Contact</h4>
+                <p class="text-slate-400 mb-2">Email : <a href="mailto:maxdingao@gmail.com" class="text-teal-400 hover:underline">maxdingao@gmail.com</a></p>
+                <p class="text-slate-400 mb-8">Valenciennes, Hauts-de-France, France</p>
+
+                <h4 class="text-white font-bold text-lg mb-4">Restez informé</h4>
+                <form class="flex" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Votre email" class="bg-slate-700/50 border border-slate-600 text-white px-4 py-2 rounded-l-md focus:outline-none focus:border-cyan-500 w-full text-sm" required>
+                    <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-4 py-2 rounded-r-md transition text-sm">
+                        S'inscrire
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Mentions légales (Bottom Bar) -->
+        <div class="max-w-6xl mx-auto px-4 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-400 text-xs">
+            <div class="mb-4 md:mb-0">
+                © 2026 Max Dingao. Tous droits réservés.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-teal-400 transition">Politique de confidentialité</a>
+                <a href="#" class="hover:text-teal-400 transition">Conditions d'utilisation</a>
+                <a href="#" class="hover:text-teal-400 transition">Plan du site</a>
+            </div>
         </div>
     </footer>
 
